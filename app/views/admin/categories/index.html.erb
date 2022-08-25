@@ -8,7 +8,7 @@
     <%= link_to '+ New Category', [:new, :admin, :category], class: 'btn btn-info' %>
   </div>
 
-  <div class="panel panel-default">
+
 
     <table class="table table-bordered">
       <thead>
@@ -17,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <%= @categories.each do |category| %>
+        <% @categories.each do |category| %>
           <tr>
             <td><%= category.name %></td>
           </tr>
@@ -25,6 +25,6 @@
       </tbody>
     </table>
 
-  </div>
+
 
 </section>
