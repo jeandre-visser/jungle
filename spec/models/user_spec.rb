@@ -45,14 +45,20 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
     end
 
-    it "is not valid when email already exists" do
+    it "is not valid when email already exists (not case sensitive)" do
 
       @user = User.new(first_name: 'Jeandre', last_name: 'Visser', email: 'visser@test.com', password: 'tester', password_confirmation: 'tester')
 
       @new_user = User.create(first_name: 'John', last_name: 'Miller', email: 'VISSER@TEST.com', password: 'tester', password_confirmation: 'tester')
-      
+
       expect(@user).to_not be_valid
       expect(@user.errors.full_messages).to include "Email has already been taken"
+    end
+
+    it "is not valid when password is less than 4 characters" do
+      @user = User.new(first_name: 'Jeandre', last_name: 'Visser', email: 'visser@test.com', password: '123', password_confirmation: '123')
+      expect(@user).to_not be_valid
+      expect(@user.errors.full_messages).to include "Password is too short (minimum is 4 characters)"
     end
 
   end
