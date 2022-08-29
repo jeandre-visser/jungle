@@ -86,5 +86,22 @@ RSpec.describe User, type: :model do
       expect(authentication).to eql nil
     end
 
+    it "authenticates when user email contains a few spaces before and/or after" do
+      @user = User.create(first_name: 'Jeandre', last_name: 'Visser', email: 'visser@test.com', password: 'tester', password_confirmation: 'tester')
+
+      authentication = User.authenticate_with_credentials(" " + @user.email + " ", @user.password)
+
+      expect(authentication).to eql @user
+    end
+
+    it "authenticates when user email is in wrong case" do
+      @user = User.create(first_name: 'Jeandre', last_name: 'Visser', email: 'visser@test.com', password: 'tester', password_confirmation: 'tester')
+
+      authentication = User.authenticate_with_credentials('VISSER@Test.COM', @user.password)
+
+      expect(authentication).to eql @user
+    end
+
+
   end
 end
