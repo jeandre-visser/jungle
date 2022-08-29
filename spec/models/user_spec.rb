@@ -34,11 +34,16 @@ RSpec.describe User, type: :model do
     end
 
     it "is not valid without password_confirmation" do
-      @user = User.new(first_name: 'Jeandre', last_name: 'Visser', email: nil, password: 'tester', password_confirmation: nil)
+      @user = User.new(first_name: 'Jeandre', last_name: 'Visser', email: 'visser@test.com', password: 'tester', password_confirmation: nil)
       expect(@user).to_not be_valid
       expect(@user.errors.full_messages).to include "Password confirmation can't be blank"
     end
 
+    it "is not valid without matching passwords" do
+      @user = User.new(first_name: 'Jeandre', last_name: 'Visser', email: 'visser@test.com', password: 'tester', password_confirmation: 'testers')
+      expect(@user).to_not be_valid
+      expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
+    end
   end
 
   describe '.authenticate_with_credentials' do
