@@ -1,6 +1,33 @@
-# Jungle
+# Jungle 
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+Welcome to the Jungle! A mini e-commerce application built with Rails 6.1 where you can shop from a large selection of plants.
+
+## Features
+
+- Signup or login to an existing account
+- Add plant items to your cart and edit quantity
+- Purchase orders using Stripe
+- Multiple categories of plants to choose from
+- Admin authentication to display and add categories and products
+- Items that are no longer in stock display a sold out badge
+
+## Quick Glimpse
+
+### Homepage 
+![Homepage](https://github.com/jeandre-visser/jungle/blob/master/docs/homepage.png)
+
+### Products Page
+![Products](https://github.com/jeandre-visser/jungle/blob/master/docs/products.png)
+
+### Signup and Login Page
+![Signup](https://github.com/jeandre-visser/jungle/blob/master/docs/signup.png)
+![Login](https://github.com/jeandre-visser/jungle/blob/master/docs/login.gif)
+
+### Admin Authentication
+![Admin](https://github.com/jeandre-visser/jungle/blob/master/docs/admin.gif)
+
+### Order
+![Order](https://github.com/jeandre-visser/jungle/blob/master/docs/order.gif)
 
 ## Setup
 
@@ -29,3 +56,8 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+## Test
+
+- Cypress
+- Rspec
