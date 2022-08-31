@@ -20,7 +20,6 @@ Welcome to the Jungle! A mini e-commerce application built with Rails 6.1 where 
 ![Products](https://github.com/jeandre-visser/jungle/blob/master/docs/products.png)
 
 ### Signup and Login Page
-![Signup](https://github.com/jeandre-visser/jungle/blob/master/docs/signup.png)
 ![Login](https://github.com/jeandre-visser/jungle/blob/master/docs/login.gif)
 
 ### Admin Authentication
